@@ -12,7 +12,7 @@ zoomerjoin is an R package that empowers you to fuzzy-join massive datasets rapi
 
 An R / Rust Package to implement an exhaustive tree search for policy-learning. Aims to extend and speed up work done with the policytree package.
 
-# [Cragg](https://beniaminogreen.github.io/zoomerjoin/) [![Build Status](https://travis-ci.com/beniaminogreen/cragg.svg?branch=main)](https://travis-ci.com/beniaminogreen/cragg) ![Codecov](https://img.shields.io/codecov/c/github/beniaminogreen/cragg) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html) ![CRAN](https://www.r-pkg.org/badges/version/cragg) ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/cragg)
+# [Cragg](https://beniaminogreen.github.io/cragg/) [![Build Status](https://travis-ci.com/beniaminogreen/cragg.svg?branch=main)](https://travis-ci.com/beniaminogreen/cragg) ![Codecov](https://img.shields.io/codecov/c/github/beniaminogreen/cragg) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html) ![CRAN](https://www.r-pkg.org/badges/version/cragg) ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/cragg)
 
 
 An R Package to implementing the Cragg and Donald (1993) and Stock and Yogo
