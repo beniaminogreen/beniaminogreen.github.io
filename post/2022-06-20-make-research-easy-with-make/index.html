@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Beniamino Green" /><meta name="description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate the running of your data analysis code whenever changes are made. This automation will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to focus on more important things." />
+<meta name="author" content="Beniamino Green" /><meta name="description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate running stages of your data analysis code whenever changes are made to the code that generates them. Using make will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to write code rather than managing dependencies." />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="Make Research Reproducible with &#39;GNU Make&#39;" />
-<meta property="og:description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate the running of your data analysis code whenever changes are made. This automation will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to focus on more important things." />
+<meta property="og:description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate running stages of your data analysis code whenever changes are made to the code that generates them. Using make will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to write code rather than managing dependencies." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/2022-06-20-make-research-easy-with-make/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-06-22T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-06-22T00:00:00+00:00" />
 
 <meta itemprop="name" content="Make Research Reproducible with &#39;GNU Make&#39;">
-<meta itemprop="description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate the running of your data analysis code whenever changes are made. This automation will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to focus on more important things."><meta itemprop="datePublished" content="2022-06-22T00:00:00+00:00" />
+<meta itemprop="description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate running stages of your data analysis code whenever changes are made to the code that generates them. Using make will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to write code rather than managing dependencies."><meta itemprop="datePublished" content="2022-06-22T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-22T00:00:00+00:00" />
-<meta itemprop="wordCount" content="217">
+<meta itemprop="wordCount" content="577">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Make Research Reproducible with &#39;GNU Make&#39;"/>
-<meta name="twitter:description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate the running of your data analysis code whenever changes are made. This automation will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to focus on more important things."/>
+<meta name="twitter:description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate running stages of your data analysis code whenever changes are made to the code that generates them. Using make will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to write code rather than managing dependencies."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -130,8 +130,8 @@
       <div class="post-meta">
         <span class="post-time"> 2022-06-22 </span>
         
-          <span class="more-meta"> 217 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 577 words </span>
+          <span class="more-meta"> 3 mins read </span>
         
       </div>
     </header>
@@ -142,7 +142,7 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#why-make">Why Make?</a></li>
+    <li><a href="#when-should-you-consider-make">When Should you consider Make?</a></li>
   </ul>
 </nav>
   </div>
@@ -152,20 +152,50 @@
 <p><a href="https://www.gnu.org/software/make/">GNU Make</a> is a computer program long known
 to computer scientists, but tragically underused in the social sciences.
 Originally developed to manage the compilation of C/C++ code, Make can be used
-to automate the running of your data analysis code whenever changes are made.
-This automation will save time (code is run if and only if its dependencies are
-updated), eliminate a common class of errors (code is never run using old data
-or calculations), and free up your head space to focus on more important things.</p>
+to automate running stages of your data analysis code whenever changes are
+made to the code that generates them. Using make will save time (code is run if
+and only if its dependencies are updated), eliminate a common class of errors
+(code is never run using old data or calculations), and free up your head space
+to write code rather than managing dependencies.</p>
 <p>The main goal of this post is to help combat the information segregation and
 expose more social scientists to make.</p>
-<h1 id="why-make">Why Make?</h1>
+<h1 id="when-should-you-consider-make">When Should you consider Make?</h1>
 <p>I use <code>Make</code> for smaller projects, especially
 when I need a language-agnostic build system. If you are using exlusively Python
 or R, I would reccomend <a href="https://github.com/ploomber/ploomber">ploomber</a> and
 <a href="https://github.com/ropensci/targets">targets</a> which provide language-specific
 alternatives which have some more advanced features for mono-lingual projects.</p>
-<p><img src="./dep.png" alt=""></p>
-<p>Example make syntax:</p>
+<p>Here&rsquo;s a simplified diagram of a project that I recently used Make to build.</p>
+<p>The project has four main stages:</p>
+<ol>
+<li>The data must be cleaned</li>
+<li>Models are fit to the cleaned data</li>
+<li>A set of monte-carlo simulations have to be run</li>
+<li>The models and simulation results are reported in a pdf document rendered using Rmarkdown.</li>
+</ol>
+<p><img src="./dep.png" alt="Diagram of a Project Managed by Make"></p>
+<p>Here&rsquo;s the same information encoded in a flow chart, which shows how the
+dependencies &ldquo;flow&rdquo;: when code or data is changed, the results must be
+propagated along the arrows until they are incorporated into the final
+report.pdf.</p>
+<p>Even for a small project such as this, keeping track of which code needs to be
+run can require considerable mental effort. Step 4 must be run in response to
+any change in the underlying codebases. The monte carlo simulations don&rsquo;t rely
+on the cleaned data or models, so they only have to be run in response to
+changes to the simulation code.</p>
+<p>Manually re-running code in response to changes opens the door for errors as
+one may forget which stages need to be run. A master run script which
+re-renders the entire pipeline wastes time, as all steps are run even if they
+don&rsquo;t need to be.  <code>Make</code> or a similar build system proivdes a principled way
+to solve this challenge as it ensures that updated code is always run in
+response to changes but that no code that has not been changed is run, saving
+time.</p>
+<p>Below, I show how you can encode these dependencies in a <code>make</code> file, which
+tells make how to rebuild the project in response to any of the underlying
+dependencies changing.  You can probably already infer the syntax: products are
+specified on the left, and the files upon which they depend on the right after
+a colon. On the next line (after using spaces to indent the code), you specify
+the commands that are used to build the product from the dependencies.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -179,28 +209,34 @@ alternatives which have some more advanced features for mono-lingual projects.</
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-make" data-lang="make"><span class="line"><span class="cl"><span class="nf">report.pdf</span><span class="o">:</span> <span class="n">report</span>.<span class="n">Rmd</span> ./<span class="n">data</span>/<span class="n">models</span>.<span class="n">Rdata</span> ./<span class="n">data</span>/<span class="n">cleaned_data</span>.<span class="n">Rdata</span>  ./<span class="n">data</span>/<span class="n">monte_carlo_results</span>.<span class="n">Rdata</span>
-</span></span><span class="line"><span class="cl">	Rscript -e <span class="s2">&#34;require(rmarkdown); render(&#39;report.Rmd&#39;)&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">report.pdf: report.Rmd ./data/models.Rdata ./data/cleaned_data.Rdata  ./data/monte_carlo_results.Rdata
+</span></span><span class="line"><span class="cl">	Rscript -e &#34;require(rmarkdown); render(&#39;report.Rmd&#39;)&#34;
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nf">./data/models.Rdata</span><span class="o">:</span> ./<span class="n">scripts</span>/<span class="n">estimate_models</span>.<span class="n">R</span> ./<span class="n">data</span>/<span class="n">cleaned_data</span>.<span class="n">Rdata</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">cd</span> scripts<span class="p">;</span> R CMD BATCH --no-save estimate_models.R
+</span></span><span class="line"><span class="cl">./data/models.Rdata: ./scripts/estimate_models.R ./data/cleaned_data.Rdata
+</span></span><span class="line"><span class="cl">	cd scripts; R CMD BATCH --no-save estimate_models.R
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nf">./data/cleaned_data.Rdata</span><span class="o">:</span> ./<span class="n">scripts</span>/<span class="n">clean_data</span>.<span class="n">R</span> ./<span class="n">data</span>/<span class="n">UCL_Palestine_US_client</span>.<span class="n">sav</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">cd</span> scripts<span class="p">;</span> R CMD BATCH --no-save clean_data.R
+</span></span><span class="line"><span class="cl">./data/cleaned_data.Rdata: ./scripts/clean_data.R ./data/data.sav
+</span></span><span class="line"><span class="cl">	cd scripts; R CMD BATCH --no-save clean_data.R
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nf">./data/monte_carlo_results.Rdata</span><span class="o">:</span> ./<span class="n">scripts</span>/<span class="n">monte_carlo</span>.<span class="n">R</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">cd</span> scripts<span class="p">;</span> R CMD BATCH --no-save monte_carlo.R
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nf">clean</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">	rm -f *.html *.tex *.aux *.log *.docx *.Rout scripts/*.Rout scripts/*.Rdata
+</span></span><span class="line"><span class="cl">./data/monte_carlo_results.Rdata: ./scripts/monte_carlo.R
+</span></span><span class="line"><span class="cl">	cd scripts; R CMD BATCH --no-save monte_carlo.R
 </span></span></code></pre></td></tr></table>
 </div>
+</div><p>And now for the amazing part! To build run the entire project, updating only
+the necessary parts, you must simply run:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p>This will rebuild the project in the least possible amount of time, while
+ensuring that all of the results are up-to-date and reproducible.</p>
+
     </div>
 
     <div class="post-copyright">
