@@ -1,0 +1,19 @@
+---
+title: "Software"
+author: "Beniamino Green"
+---
+
+# [Zoomerjoin](https://beniaminogreen.github.io/zoomerjoin/) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![Codecov test coverage](https://codecov.io/gh/beniaminogreen/zoomerjoin/branch/main/graph/badge.svg)](https://app.codecov.io/gh/beniaminogreen/zoomerjoin?branch=main)
+
+
+zoomerjoin is an R package that empowers you to fuzzy-join massive datasets rapidly, and with little memory consumption. It is powered by high-performance implementations of Locality Sensitive Hashing, an algorithm that finds the matches records between two datasets without having to compare all possible pairs of observations. In practice, this means zoomerjoin can fuzzily-join datasets days, or even years faster than other matching packages. zoomerjoin has been used in-production to join datasets of hundreds of millions of names in a few hours.
+
+# [Sparsepolicytree](https://yale-medicaid.github.io/sparsepolicytree/)
+
+An R / Rust Package to implement an exhaustive tree search for policy-learning. Aims to extend and speed up work done with the policytree package.
+
+# [Cragg](https://beniaminogreen.github.io/zoomerjoin/) [![Build Status](https://travis-ci.com/beniaminogreen/cragg.svg?branch=main)](https://travis-ci.com/beniaminogreen/cragg) ![Codecov](https://img.shields.io/codecov/c/github/beniaminogreen/cragg) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html) ![CRAN](https://www.r-pkg.org/badges/version/cragg) ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/cragg)
+
+
+An R Package to implementing the Cragg and Donald (1993) and Stock and Yogo
+(2005) tests for weak instruments in R.

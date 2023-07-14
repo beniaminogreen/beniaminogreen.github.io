@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Make Research Reproducible with &#39;GNU Make&#39; - Beniamino Green</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Beniamino Green" /><meta name="description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate the running of your data analysis code whenever changes are made. This automation will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to focus on more important things." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/2022-06-20-make-research-easy-with-make/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.433ab8b779638633d97b8d9baa105eeb21a9bdb8dfac9f21d3edb2e36d398d9f.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Make Research Reproducible with &#39;GNU Make&#39;" />
+<meta property="og:description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate the running of your data analysis code whenever changes are made. This automation will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to focus on more important things." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2022-06-20-make-research-easy-with-make/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-22T00:00:00+00:00" />
+
+<meta itemprop="name" content="Make Research Reproducible with &#39;GNU Make&#39;">
+<meta itemprop="description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate the running of your data analysis code whenever changes are made. This automation will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to focus on more important things."><meta itemprop="datePublished" content="2022-06-22T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-06-22T00:00:00+00:00" />
+<meta itemprop="wordCount" content="217">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Make Research Reproducible with &#39;GNU Make&#39;"/>
+<meta name="twitter:description" content="Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C&#43;&#43; code, Make can be used to automate the running of your data analysis code whenever changes are made. This automation will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to focus on more important things."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Beniamino Green</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Blog Posts</li>
+      </a><a href="/resume.pdf">
+        <li class="mobile-menu-item">CV</li>
+      </a><a href="/software">
+        <li class="mobile-menu-item">Software</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Beniamino Green</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Blog Posts</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/resume.pdf">CV</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/software">Software</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Make Research Reproducible with &#39;GNU Make&#39;</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-06-22 </span>
+        
+          <span class="more-meta"> 217 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#why-make">Why Make?</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="introduction">Introduction</h1>
+<p><a href="https://www.gnu.org/software/make/">GNU Make</a> is a computer program long known
+to computer scientists, but tragically underused in the social sciences.
+Originally developed to manage the compilation of C/C++ code, Make can be used
+to automate the running of your data analysis code whenever changes are made.
+This automation will save time (code is run if and only if its dependencies are
+updated), eliminate a common class of errors (code is never run using old data
+or calculations), and free up your head space to focus on more important things.</p>
+<p>The main goal of this post is to help combat the information segregation and
+expose more social scientists to make.</p>
+<h1 id="why-make">Why Make?</h1>
+<p>I use <code>Make</code> for smaller projects, especially
+when I need a language-agnostic build system. If you are using exlusively Python
+or R, I would reccomend <a href="https://github.com/ploomber/ploomber">ploomber</a> and
+<a href="https://github.com/ropensci/targets">targets</a> which provide language-specific
+alternatives which have some more advanced features for mono-lingual projects.</p>
+<p><img src="./dep.png" alt=""></p>
+<p>Example make syntax:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-make" data-lang="make"><span class="line"><span class="cl"><span class="nf">report.pdf</span><span class="o">:</span> <span class="n">report</span>.<span class="n">Rmd</span> ./<span class="n">data</span>/<span class="n">models</span>.<span class="n">Rdata</span> ./<span class="n">data</span>/<span class="n">cleaned_data</span>.<span class="n">Rdata</span>  ./<span class="n">data</span>/<span class="n">monte_carlo_results</span>.<span class="n">Rdata</span>
+</span></span><span class="line"><span class="cl">	Rscript -e <span class="s2">&#34;require(rmarkdown); render(&#39;report.Rmd&#39;)&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">./data/models.Rdata</span><span class="o">:</span> ./<span class="n">scripts</span>/<span class="n">estimate_models</span>.<span class="n">R</span> ./<span class="n">data</span>/<span class="n">cleaned_data</span>.<span class="n">Rdata</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">cd</span> scripts<span class="p">;</span> R CMD BATCH --no-save estimate_models.R
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">./data/cleaned_data.Rdata</span><span class="o">:</span> ./<span class="n">scripts</span>/<span class="n">clean_data</span>.<span class="n">R</span> ./<span class="n">data</span>/<span class="n">UCL_Palestine_US_client</span>.<span class="n">sav</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">cd</span> scripts<span class="p">;</span> R CMD BATCH --no-save clean_data.R
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">./data/monte_carlo_results.Rdata</span><span class="o">:</span> ./<span class="n">scripts</span>/<span class="n">monte_carlo</span>.<span class="n">R</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">cd</span> scripts<span class="p">;</span> R CMD BATCH --no-save monte_carlo.R
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">clean</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	rm -f *.html *.tex *.aux *.log *.docx *.Rout scripts/*.Rout scripts/*.Rdata
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Beniamino Green</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2022-06-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:beniamino.green@tutanota.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/ben-green-b33240185/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/beniaminogreen" class="iconfont icon-github" title="github"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Beniamino Green</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
