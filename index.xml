@@ -35,14 +35,5 @@ Previously, I received a Master&amp;rsquo;s in Social Analysis and Research from
       <description>Zoomerjoin   zoomerjoin is an R package that empowers you to fuzzy-join massive datasets rapidly, and with little memory consumption. It is powered by high-performance implementations of Locality Sensitive Hashing, an algorithm that finds the matches records between two datasets without having to compare all possible pairs of observations. In practice, this means zoomerjoin can fuzzily-join datasets days, or even years faster than other matching packages. zoomerjoin has been used in-production to join datasets of hundreds of millions of names in a few hours.</description>
     </item>
     
-    <item>
-      <title>Software</title>
-      <link>http://localhost:1313/software.knit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/software.knit/</guid>
-      <description>Zoomerjoin   zoomerjoin is an R package that empowers you to fuzzy-join massive datasets rapidly, and with little memory consumption. It is powered by high-performance implementations of Locality Sensitive Hashing, an algorithm that finds the matches records between two datasets without having to compare all possible pairs of observations. In practice, this means zoomerjoin can fuzzily-join datasets days, or even years faster than other matching packages. zoomerjoin has been used in-production to join datasets of hundreds of millions of names in a few hours.</description>
-    </item>
-    
   </channel>
 </rss>
