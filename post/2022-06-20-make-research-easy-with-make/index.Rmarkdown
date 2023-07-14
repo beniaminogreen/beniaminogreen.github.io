@@ -63,7 +63,7 @@ specified on the left, and the files upon which they depend on the right after
 a colon. On the next line (after using spaces to indent the code), you specify
 the commands that are used to build the product from the dependencies.
 
-```{make, eval=F}
+```{eval=F}
 report.pdf: report.Rmd ./data/models.Rdata ./data/cleaned_data.Rdata  ./data/monte_carlo_results.Rdata
 	Rscript -e "require(rmarkdown); render('report.Rmd')"
 
