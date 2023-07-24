@@ -1,0 +1,206 @@
+---
+title: Introducing Zoomerjoin
+author: ''
+date: '2023-07-19'
+slug: []
+draft: true
+categories: []
+tags: []
+lastmod: '2023-07-19T23:10:23-04:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: yes
+mathjaxEnableSingleDollar: yes
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: yes
+  options: ''
+sequenceDiagrams:
+  enable: yes
+  options: ''
+bibliography: paper.bib
+---
+
+My new R package, Zoomerjoin, empowers you to fuzzily-join datasets at speeds you
+never thought possible.
+
+<!--more-->
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+```{r, include=F}
+library(tidyverse)
+library(zoomerjoin)
+knitr::opts_chunk$set(fig.path = "static")
+set.seed(42)
+
+n <- 500000
+corpus_1 <- read_csv("bonica.csv")  %>%
+    head(n)
+names(corpus_1) <- c("id_1", "field")
+corpus_2 <- read_csv("bonica.csv")  %>%
+    tail(n)
+names(corpus_2) <- c("id_2", "field")
+```
+
+If you work with large-scale social-science data, you are likely familiar with
+the concept of "fuzzy" merging which describes a process to merge data that is
+robust to minor misspellings or deviations between the keys used to identify
+observations between datasets. Fuzzy merging allows you to merge data even when
+fields have been inconsistently recorded or misspelled, as is common with
+large-scale administrative data.
+
+However, there's a catch: almost all popular fuzzy merging software packages
+take *quadratic time,*  meaning they do not scale to large datasets. My new R
+package, Zoomerjoin, empowers you to fuzzily join datasets in linear time,
+allowing you to fuzzy join larger datasets than ever before.
+
+# Background:
+
+Fuzzy matching is typically taken to mean identifying all pairs of observations
+between two datasets that have distance less than a specified threshold.
+Existing fuzzy-joining methods in R do not scale to large datasets as they
+exhaustively compare all possible pairs of units and recording all matching
+pairs, incurring a quadratic $\mathcal{O}(mn)$ time cost.  Perhaps worse, the
+most widely-used software packages typically also have a space complexity of
+$O(mn)$, meaning that a patient user cannot simply wait for the join to
+complete, as the memory of even large machines will be quickly exhausted [
+@fuzzyjoin ].
+
+Zoomerjoin solves this problem by implementing two Locality-Sensitive Hashing
+algorithms [@Broder; @Datar_2004] which sort observations into buckets using a
+bespoke hash function which assigns similar entries the same key with high
+probability, while dissimilar items are unlikely to be assigned the same key.
+After this initial sorting step, the algorithm checks pairs of records in the
+same bucket to see if they are close enough to be considered a match. Records
+in different buckets are never compared, so the algorithm takes
+$O(\max_{ij}{(m_i n_j)})$ time to run (time proportional to the size of the
+largest hash bucket). In the ordinary case that each observation matches to
+few points in another dataset, the running time is dominated by the hashing
+step, and the program finishes in linear time using linear memory.
+
+# How to use
+
+If you are familar with the dplyr-style logical joins (such as `inner_join`),
+you are already familiar with the syntax of Zoomerjoin. Zoomerjoin supports
+fuzzy joining for two distance measures, the Jaccard distance measure (for text
+data), and the Euclidean distance (for points or vectors). You can perform a
+fuzzy-join using these distance metrics, you can use `jaccard_(operation)_join`
+or `euclidean_(operation)_join` respectively.
+
+Here's an example showing how to merge two datasets using the
+`jaccard_inner_join` function. I use as test datasets two random subsets
+political donors listed in the [Database on Ideology, Money in Politics, and
+Elections (DIME)](https://data.stanford.edu/dime) (the same test set from
+benchmark from [this paper](https://www.cambridge.org/core/journals/political-analysis/article/adaptive-fuzzy-string-matching-how-to-merge-datasets-with-only-one-messy-identifying-field/275D7890548359215AC728C1E35B53CE)).
+
+To give you a sense of the data, here's the first ten rows of the first sample:
+
+```{r}
+corpus_1
+```
+
+And the first ten rows of the second sample:
+
+```{r}
+corpus_2
+```
+
+I want to find matching rows or donors between the two tables, but even after
+standardization, that the same donor may be spelled or recorded differently in
+each dataset, so fuzzy joining is necessary.  I use the `jaccard_inner_join`
+function to find matching rows between the two samples:
+
+```{r}
+start_time <- Sys.time()
+join_out <- jaccard_inner_join(corpus_1, corpus_2,
+                               by = "field",
+                               threshold = .9, n_gram_width=6,
+                               n_bands=40, band_width=6)
+print(Sys.time() - start_time)
+select(join_out, field.x, field.y) %>%
+    mutate_all(~substr(.x,1,30))
+```
+
+The join finishes in just a few seconds on a modern data science laptop, and
+uses very little memory, even though a brute-force comparison of all pairs
+would involve $2.5^{11}$ operations! You can see a more detailed example of this
+vignette and more of what you can do with zoomerjoin in the [introductory
+vignette](https://beniaminogreen.github.io/zoomerjoin/articles/guided_tour.html),
+and [package README](https://github.com/beniaminogreen/zoomerjoin).
+
+# Benchmarks
+
+How much time can zoomerjoin save you? The de facto standard for fuzzyjoining
+is the venerable `fuzzyjoin` package which implements fuzzy joins for a panoply
+of distance metrics. The package's most commonly used fuzzy joins, those for
+the string distance are backed by optimized C code used to compare the strings.
+However, `fuzzyjoin` runs an exhaustive search between all pairs of
+observations between each dataset, it has to perform an increasing amount of
+work for each additional row it seeks to merge, and hence does not scale to
+large datasets.
+
+Below, I compare the performance of `fuzzyjoin` to `zoomerjoin` when matching
+datasets for the two distance metrics supported by `zoomerjoin`.
+
+```{r, echo=F, message=F}
+sim_data <- read_csv("sim_data.csv")
+sim_data  %>%
+    mutate(
+           name = ifelse(name == "time", "Time Usage (s)", "Memory Usage (MB)"),
+           join_type = ifelse(join_type == "Jaccard Distance",
+                              "Jaccard Distance Join",
+                              "Euclidean Distance Joins"),
+           ) %>%
+    ggplot(aes(x=as.numeric(n), y=value, col = package, linetype = package)) +
+    xlab("Number of rows in each dataset") +
+    geom_point() +
+    geom_line() +
+    theme_bw() +
+    facet_wrap(~ join_type + name, scales = 'free') +
+    scale_y_continuous("Time (s) / memory (MB)")
+```
+
+Zoomerjoin achieves almost linear scaling in both runtime and memory, while
+`fuzzyjoin` scales quadratically. Even for datasets with 2500 rows,
+`zoomerjoin` finishes in under a second. By contrast, the Jaccard-distance
+joins implemented in `fuzzyjoin` take over three minutes to join. For the
+largest Euclidean datasets, `fuzzyjoin` almost exhausts the 8GB memory capacity
+of the laptop used for benchmarking, while `zoomerjoin`'s memory rises above
+above 8 MB — a thousand-fold decrease.
+
+Of course, `zoomerjoin` isn't better for every task; it supports fewer distance
+metrics, as well as other types of joins such as regex joins, and joins for
+genomic data.  Additionally, fuzzyjoin does not use Rust, so it is easier to
+deploy on most systems, and will be available on more systems.
+
+# Use Zoomerjoin For Blocking:
+
+In many cases, a single distance metric will not be sufficient to distinguish
+matches from non-matches. As an example, it might be that multiple fields are
+needed to conclusively identify matches, or you might need to combine multiple
+string-distance metrics to properly distinguish different spellings of the same
+identifier from similar yet distinct identifiers.
+
+Zoomerjoin can't do this itself, but it can drastically cut down on the time
+needed to perform such matching by acting as a pre-processing step. To do this,
+you can have Zoomerjoin return all pairs that are remotely similar, and then
+distinguish between matches and non-matches using a bespoke model. I can't
+scoop some of the work I'm doing currently, but I can share that I have used
+Zoomerjoin as a pre-processing step to a machine-learning model to find
+credible matches in datasets with hundreds of millions of rows in a matter of
+minutes.
+
+# Bibliography
+
+

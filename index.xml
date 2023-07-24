@@ -6,7 +6,7 @@
     <description>Recent content on Beniamino Green</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
@@ -18,12 +18,35 @@ Previously, I received a Master&amp;rsquo;s in Social Analysis and Research from
     </item>
     
     <item>
+      <title>New Entries in The Ben Green Style Guide</title>
+      <link>http://localhost:1313/post/2023-07-24-new-entries-in-the-ben-green-style-guide/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/2023-07-24-new-entries-in-the-ben-green-style-guide/</guid>
+      <description>&lt;p&gt;I don&amp;rsquo;t say &amp;ldquo;control for&amp;rdquo; or &amp;ldquo;approaching significance&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introducing Zoomerjoin</title>
+      <link>http://localhost:1313/post/2023-07-19-introducing-zoomerjoin/</link>
+      <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/2023-07-19-introducing-zoomerjoin/</guid>
+      <description>
+
+
+&lt;p&gt;My new R package, Zoomerjoin, empowers you to fuzzily-join datasets at speeds you
+never thought possible.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Make Research Reproducible with &#39;GNU Make&#39;</title>
       <link>http://localhost:1313/post/2022-06-20-make-research-easy-with-make/</link>
       <pubDate>Wed, 22 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/post/2022-06-20-make-research-easy-with-make/</guid>
-      <description>Introduction GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C++ code, Make can be used to automate running stages of your data analysis code whenever changes are made to the code that generates them. Using make will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to write code rather than managing dependencies.</description>
+      <description>GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C++ code, Make can be used to automate running stages of your data analysis code whenever changes are made to the code that generates them. Using make will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to write code rather than managing dependencies.</description>
     </item>
     
     <item>
