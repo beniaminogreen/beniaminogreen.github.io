@@ -13,7 +13,7 @@ comment: no
 toc: no
 autoCollapseToc: no
 postMetaInFooter: no
-hiddenFromHomePage: no
+hiddenFromHomePage: yes
 contentCopyright: no
 reward: no
 mathjax: yes
