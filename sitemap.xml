@@ -10,20 +10,27 @@
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2023-07-24T18:32:52-04:00</lastmod>
+    <lastmod>2023-07-26T23:29:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/2023-07-24-new-entries-in-the-ben-green-style-guide/</loc>
-    <lastmod>2023-07-24T18:32:52-04:00</lastmod>
+    <loc>http://localhost:1313/post/2023-07-26-i-don-t-belive-mo-salah-reduced-hate-crimes/</loc>
+    <lastmod>2023-07-26T23:29:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/</loc>
+    <lastmod>2023-07-26T23:29:31-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/2023-07-24-new-entries-in-the-ben-green-style-guide/</loc>
     <lastmod>2023-07-24T18:32:52-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
