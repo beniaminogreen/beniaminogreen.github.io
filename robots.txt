@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: beniamino.org/sitemap.xml
+Sitemap: https://beniamino.org/sitemap.xml
