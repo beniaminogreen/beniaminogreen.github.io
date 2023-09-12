@@ -1,62 +1,62 @@
-<?xml-stylesheet type="text/xsl" href="http://localhost:1313/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="beniamino.org/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>beniamino.org/about/</loc>
     <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>beniamino.org/</loc>
     <lastmod>2023-07-26T23:29:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/2023-07-26-i-don-t-believe-mo-salah-reduced-hate-crimes/</loc>
+    <loc>beniamino.org/post/2023-07-26-i-don-t-believe-mo-salah-reduced-hate-crimes/</loc>
     <lastmod>2023-07-26T23:29:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/</loc>
+    <loc>beniamino.org/post/</loc>
     <lastmod>2023-07-26T23:29:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/2023-07-24-new-entries-in-the-ben-green-style-guide/</loc>
+    <loc>beniamino.org/post/2023-07-24-new-entries-in-the-ben-green-style-guide/</loc>
     <lastmod>2023-07-24T18:32:52-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/2022-06-20-make-research-easy-with-make/</loc>
+    <loc>beniamino.org/post/2022-06-20-make-research-easy-with-make/</loc>
     <lastmod>2022-06-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>beniamino.org/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/software/</loc>
+    <loc>beniamino.org/software/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>beniamino.org/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
