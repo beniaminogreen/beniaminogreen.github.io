@@ -1,62 +1,62 @@
-<?xml-stylesheet type="text/xsl" href="beniamino.org/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://beniamino.org/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>beniamino.org/about/</loc>
+    <loc>https://beniamino.org/about/</loc>
     <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>beniamino.org/</loc>
+    <loc>https://beniamino.org/</loc>
     <lastmod>2023-07-26T23:29:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>beniamino.org/post/2023-07-26-i-don-t-believe-mo-salah-reduced-hate-crimes/</loc>
+    <loc>https://beniamino.org/post/2023-07-26-i-don-t-believe-mo-salah-reduced-hate-crimes/</loc>
     <lastmod>2023-07-26T23:29:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>beniamino.org/post/</loc>
+    <loc>https://beniamino.org/post/</loc>
     <lastmod>2023-07-26T23:29:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>beniamino.org/post/2023-07-24-new-entries-in-the-ben-green-style-guide/</loc>
+    <loc>https://beniamino.org/post/2023-07-24-new-entries-in-the-ben-green-style-guide/</loc>
     <lastmod>2023-07-24T18:32:52-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>beniamino.org/post/2022-06-20-make-research-easy-with-make/</loc>
+    <loc>https://beniamino.org/post/2022-06-20-make-research-easy-with-make/</loc>
     <lastmod>2022-06-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>beniamino.org/categories/</loc>
+    <loc>https://beniamino.org/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>beniamino.org/software/</loc>
+    <loc>https://beniamino.org/software/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>beniamino.org/tags/</loc>
+    <loc>https://beniamino.org/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
