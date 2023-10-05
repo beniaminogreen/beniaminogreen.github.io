@@ -6,7 +6,7 @@
     <description>Recent content on Beniamino Green</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://beniamino.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://beniamino.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://beniamino.org/about/</link>
@@ -15,6 +15,22 @@
       <guid>https://beniamino.org/about/</guid>
       <description>About Me I am an incoming pre-doctoral fellow at the Yale Tobin Center for Economic Policy. I work on causal inference and machine learning.
 Previously, I received a Master&amp;rsquo;s in Social Analysis and Research from Brown University, and a Bachelor&amp;rsquo;s in Politics, Philosophy and Economics with a concentration in Quantitative Methods from the University College London.</description>
+    </item>
+    
+    <item>
+      <title>Introducing Zoomerjoin</title>
+      <link>https://beniamino.org/post/2023-10-05-introducing-zoomerjoin/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://beniamino.org/post/2023-10-05-introducing-zoomerjoin/</guid>
+      <description>
+
+
+&lt;p&gt;My new R package, Zoomerjoin, empowers you to fuzzily-join datasets at speeds
+you never thought possible. Check out the article introducing the package in
+the Journal of Open Source Software
+&lt;a href=&#34;https://joss.theoj.org/papers/10.21105/joss.05693&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -51,12 +67,21 @@ Twitter followers.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Research</title>
+      <link>https://beniamino.org/research/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://beniamino.org/research/</guid>
+      <description>Published Articles: Zoomerjoin: Superlatively Fast Fuzzy Joins:  Researchers often have to link large datasets without access to a unique identifying key, or on the basis of a field that contains misspellings, small errors, or is otherwise inconsistent. Most popular methods to solve this problem involve comparing all possible pairs of matches between each dataset, incurring a computational cost proportional to the product of the rows in each dataset O(mn).</description>
+    </item>
+    
+    <item>
       <title>Software</title>
       <link>https://beniamino.org/software/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://beniamino.org/software/</guid>
-      <description>Zoomerjoin   zoomerjoin is an R package that empowers you to fuzzy-join massive datasets rapidly, and with little memory consumption. It is powered by high-performance implementations of Locality Sensitive Hashing, an algorithm that finds the matches records between two datasets without having to compare all possible pairs of observations. In practice, this means zoomerjoin can fuzzily-join datasets days, or even years faster than other matching packages. zoomerjoin has been used in-production to join datasets of hundreds of millions of names in a few hours.</description>
+      <description>Zoomerjoin    zoomerjoin is an R package that empowers you to fuzzy-join massive datasets rapidly, and with little memory consumption. It is powered by high-performance implementations of Locality Sensitive Hashing, an algorithm that finds the matches records between two datasets without having to compare all possible pairs of observations. In practice, this means zoomerjoin can fuzzily-join datasets days, or even years faster than other matching packages. zoomerjoin has been used in-production to join datasets of hundreds of millions of names in a few hours.</description>
     </item>
     
   </channel>
