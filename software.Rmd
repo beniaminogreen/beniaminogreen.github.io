@@ -3,7 +3,7 @@ title: "Software"
 author: "Beniamino Green"
 ---
 
-# [Zoomerjoin](https://beniaminogreen.github.io/zoomerjoin/) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![Codecov test coverage](https://codecov.io/gh/beniaminogreen/zoomerjoin/branch/main/graph/badge.svg)](https://app.codecov.io/gh/beniaminogreen/zoomerjoin?branch=main)
+# [Zoomerjoin](https://beniaminogreen.github.io/zoomerjoin/) [![DOI](https://joss.theoj.org/papers/10.21105/joss.05693/status.svg)](https://doi.org/10.21105/joss.05693) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![Codecov test coverage](https://codecov.io/gh/beniaminogreen/zoomerjoin/branch/main/graph/badge.svg)](https://app.codecov.io/gh/beniaminogreen/zoomerjoin?branch=main)
 
 
 zoomerjoin is an R package that empowers you to fuzzy-join massive datasets rapidly, and with little memory consumption. It is powered by high-performance implementations of Locality Sensitive Hashing, an algorithm that finds the matches records between two datasets without having to compare all possible pairs of observations. In practice, this means zoomerjoin can fuzzily-join datasets days, or even years faster than other matching packages. zoomerjoin has been used in-production to join datasets of hundreds of millions of names in a few hours.
