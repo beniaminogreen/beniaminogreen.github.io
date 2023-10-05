@@ -6,7 +6,23 @@
     <description>Recent content in Posts on Beniamino Green</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://beniamino.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://beniamino.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing Zoomerjoin</title>
+      <link>https://beniamino.org/post/2023-10-05-introducing-zoomerjoin/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://beniamino.org/post/2023-10-05-introducing-zoomerjoin/</guid>
+      <description>
+
+
+&lt;p&gt;My new R package, Zoomerjoin, empowers you to fuzzily-join datasets at speeds
+you never thought possible. Check out the article introducing the package in
+the Journal of Open Source Software
+&lt;a href=&#34;https://joss.theoj.org/papers/10.21105/joss.05693&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>I Don&#39;t Believe Mo Salah Reduced Hate Crimes</title>
       <link>https://beniamino.org/post/2023-07-26-i-don-t-believe-mo-salah-reduced-hate-crimes/</link>
