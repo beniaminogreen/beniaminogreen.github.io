@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Introducing Zoomerjoin - Beniamino Green</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Beniamino Green" /><meta name="description" content=" My new R package, Zoomerjoin, empowers you to fuzzily-join datasets at speeds you never thought possible. Check out the article introducing the package in the Journal of Open Source Software here
+" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.96.0 with theme even" />
+
+
+<link rel="canonical" href="https://beniamino.org/post/2023-10-05-introducing-zoomerjoin/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.433ab8b779638633d97b8d9baa105eeb21a9bdb8dfac9f21d3edb2e36d398d9f.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Introducing Zoomerjoin" />
+<meta property="og:description" content="
+
+
+My new R package, Zoomerjoin, empowers you to fuzzily-join datasets at speeds
+you never thought possible. Check out the article introducing the package in
+the Journal of Open Source Software
+here
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://beniamino.org/post/2023-10-05-introducing-zoomerjoin/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-10-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-10-05T17:23:31-04:00" />
+
+<meta itemprop="name" content="Introducing Zoomerjoin">
+<meta itemprop="description" content="
+
+
+My new R package, Zoomerjoin, empowers you to fuzzily-join datasets at speeds
+you never thought possible. Check out the article introducing the package in
+the Journal of Open Source Software
+here
+"><meta itemprop="datePublished" content="2023-10-05T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-10-05T17:23:31-04:00" />
+<meta itemprop="wordCount" content="1512">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Introducing Zoomerjoin"/>
+<meta name="twitter:description" content="
+
+
+My new R package, Zoomerjoin, empowers you to fuzzily-join datasets at speeds
+you never thought possible. Check out the article introducing the package in
+the Journal of Open Source Software
+here
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Beniamino Green</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/post/">
+        <li class="mobile-menu-item">Blog</li>
+      </a><a href="/resume.pdf">
+        <li class="mobile-menu-item">CV</li>
+      </a><a href="/research">
+        <li class="mobile-menu-item">Research</li>
+      </a><a href="/software">
+        <li class="mobile-menu-item">Software</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Beniamino Green</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/post/">Blog</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/resume.pdf">CV</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/research">Research</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/software">Software</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Introducing Zoomerjoin</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-10-05 </span>
+        
+          <span class="more-meta"> 1512 words </span>
+          <span class="more-meta"> 8 mins read </span>
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<p>If you work with large-scale social-science data, you are likely familiar with
+the concept of “fuzzy” merging datasets, or joining in a way that is robust to
+minor misspellings or corruptions in the keys used to identify observations
+between datasets. Fuzzy merging allows you to merge data even when fields have
+been inconsistently recorded or misspelled, as is common with large-scale
+administrative data.</p>
+<p>However, there’s a catch: almost all popular fuzzy merging software packages
+involve comparing all possible pairs of records between two datasets, meaning
+they do not scale to realistically-sized datasets. In this post, I introduce my
+new R package, Zoomerjoin, empowers you to fuzzily join datasets in linear
+time, allowing you to fuzzy join larger datasets than ever before.</p>
+<p>If you’d like to read a slightly more detailed and technical introduction to
+the package, please check out the article introducing the package in the
+Journal of Open Source Software <a href="https://joss.theoj.org/papers/10.21105/joss.05693">here</a></p>
+<div id="background" class="section level1">
+<h1>Background:</h1>
+<p>Fuzzy matching is typically taken to mean identifying all pairs of observations
+between two datasets that have distance less than a specified threshold.
+Existing fuzzy-joining methods in R do not scale to large datasets as they
+exhaustively compare all possible pairs of units and recording all matching
+pairs, incurring a quadratic <span class="math inline">\(\mathcal{O}(mn)\)</span> time cost. Perhaps worse, the
+most widely-used software packages typically also have a space complexity of
+<span class="math inline">\(O(mn)\)</span>, meaning that a patient user cannot simply wait for the join to
+complete, as the memory of even large machines will be quickly exhausted <span class="citation">(<a href="#ref-fuzzyjoin">Robinson 2020</a> )</span>.</p>
+<p>Zoomerjoin solves this problem by implementing two Locality-Sensitive Hashing
+algorithms <span class="citation">(<a href="#ref-Broder">Broder 1997</a>; <a href="#ref-Datar_2004">Datar et al. 2004</a>)</span> which sort observations into buckets using a
+bespoke hash function which assigns similar entries the same key with high
+probability, while dissimilar items are unlikely to be assigned the same key.
+After this initial sorting step, the algorithm checks pairs of records in the
+same bucket to see if they are close enough to be considered a match. Records
+in different buckets are never compared, so the algorithm takes
+<span class="math inline">\(O(\max_{ij}{(m_i n_j)})\)</span> time to run (time proportional to the size of the
+largest hash bucket). In the ordinary case that each observation matches to
+few points in another dataset, the running time is dominated by the hashing
+step, and the program finishes in linear time using linear memory.</p>
+</div>
+<div id="how-to-use" class="section level1">
+<h1>How to use</h1>
+<p>If you are familar with the dplyr-style logical joins (such as <code>inner_join</code>),
+you are already familiar with the syntax of Zoomerjoin. Zoomerjoin supports
+fuzzy joining for two distance measures, the Jaccard distance measure (for text
+data), and the Euclidean distance (for points or vectors). You can perform a
+fuzzy-join using these distance metrics, you can use <code>jaccard_(operation)_join</code>
+or <code>euclidean_(operation)_join</code> respectively.</p>
+<p>Here’s an example showing how to merge two datasets using the
+<code>jaccard_inner_join</code> function. I use as test datasets two random subsets
+political donors listed in the <a href="https://data.stanford.edu/dime">Database on Ideology, Money in Politics, and
+Elections (DIME)</a> (the same test set from
+benchmark from <a href="https://www.cambridge.org/core/journals/political-analysis/article/adaptive-fuzzy-string-matching-how-to-merge-datasets-with-only-one-messy-identifying-field/275D7890548359215AC728C1E35B53CE">this paper</a>).</p>
+<p>To give you a sense of the data, here’s the first ten rows of the first sample:</p>
+<pre class="r"><code>corpus_1 &lt;- dime_data %&gt;% # dime data is packaged with zoomerjoin
+    head(5*10^5)
+names(corpus_1) &lt;- c(&quot;a&quot;, &quot;field&quot;)
+corpus_1</code></pre>
+<pre><code>## # A tibble: 500,000 × 2
+##        a field                                                                  
+##    &lt;dbl&gt; &lt;chr&gt;                                                                  
+##  1     1 ufwa cope committee                                                    
+##  2     2 committee to re elect charles e. bennett                               
+##  3     3 montana democratic party non federal account                           
+##  4     4 mississippi power &amp; light company management political action and educ…
+##  5     5 napus pac for postmasters                                              
+##  6     6 aminoil good government fund                                           
+##  7     7 national women&#39;s political caucus of california                        
+##  8     8 minnesota gun owners&#39; political victory fund                           
+##  9     9 metropolitan detroit afl cio cope committee                            
+## 10    10 carpenters legislative improvement committee united brotherhood of car…
+## # ℹ 499,990 more rows</code></pre>
+<p>And the first ten rows of the second sample:</p>
+<pre class="r"><code>corpus_2 &lt;- dime_data %&gt;% # dime data is packaged with zoomerjoin
+    tail(5*10^5)
+names(corpus_2) &lt;- c(&quot;b&quot;, &quot;field&quot;)
+corpus_2</code></pre>
+<pre><code>## # A tibble: 500,000 × 2
+##         b field                               
+##     &lt;dbl&gt; &lt;chr&gt;                               
+##  1 832471 avrp studios inc                    
+##  2 832472 avrd design                         
+##  3 832473 avenales cattle co                  
+##  4 832474 auto dealers of michigan political a
+##  5 832475 atty &amp; counselor at law             
+##  6 832476 at&amp;t united way                     
+##  7 832477 ashland food &amp; liquors              
+##  8 832478 arvance turkey ranch inc            
+##  9 832479 arizona federation of teachers      
+## 10 832480 arianas restaurant                  
+## # ℹ 499,990 more rows</code></pre>
+<p>I want to find matching rows or donors between the two tables, but even after
+standardization, that the same donor may be spelled or recorded differently in
+each dataset, so fuzzy joining is necessary. I use the <code>jaccard_inner_join</code>
+function to find matching rows between the two samples:</p>
+<pre class="r"><code>start_time &lt;- Sys.time()
+join_out &lt;- jaccard_inner_join(corpus_1, corpus_2,
+                               by = &quot;field&quot;,
+                               threshold = .9, n_gram_width=6,
+                               n_bands=40, band_width=6)
+print(Sys.time() - start_time)</code></pre>
+<pre><code>## Time difference of 10.23653 secs</code></pre>
+<pre class="r"><code>select(join_out, field.x, field.y) %&gt;%
+    mutate_all(~substr(.x,1,30))</code></pre>
+<pre><code>## # A tibble: 7,803 × 2
+##    field.x                          field.y                         
+##    &lt;chr&gt;                            &lt;chr&gt;                           
+##  1 &quot;operating engineers local no 3&quot; &quot;operating engineeers local no &quot;
+##  2 &quot;goode casseb jones riklin choa&quot; &quot;goode casseb jones riklin choa&quot;
+##  3 &quot;texas farm bureau,&quot;             &quot;texas farm bureau&quot;             
+##  4 &quot;liuna local 1309&quot;               &quot;liuna local 130&quot;               
+##  5 &quot;friends of steve fryar&quot;         &quot;friends of steve fryar,&quot;       
+##  6 &quot;53b house district republican &quot; &quot;55b house district republican &quot;
+##  7 &quot;4th district democratic centra&quot; &quot;26th district democratic centr&quot;
+##  8 &quot;the holman law firm p.c.&quot;       &quot;the holman law firm p.c.,&quot;     
+##  9 &quot;teamsters local 813&quot;            &quot;teamsters local 81&quot;            
+## 10 &quot;hotel employees &amp; restaurant e&quot; &quot;hotel employees &amp; restaurant e&quot;
+## # ℹ 7,793 more rows</code></pre>
+<p>The join finishes in just a few seconds on a modern data science laptop, and
+uses very little memory, even though a brute-force comparison of all pairs
+would involve <span class="math inline">\(2.5^{11}\)</span> operations! You can see a more detailed example of this
+vignette and more of what you can do with zoomerjoin in the <a href="https://beniaminogreen.github.io/zoomerjoin/articles/guided_tour.html">introductory
+vignette</a>,
+and <a href="https://github.com/beniaminogreen/zoomerjoin">package README</a>.</p>
+</div>
+<div id="benchmarks" class="section level1">
+<h1>Benchmarks</h1>
+<p>How much time can zoomerjoin save you? The de facto standard for fuzzyjoining
+is the venerable <code>fuzzyjoin</code> package which implements fuzzy joins for a panoply
+of distance metrics. The package’s most commonly used fuzzy joins, those for
+the string distance are backed by optimized C code used to compare the strings.
+However, <code>fuzzyjoin</code> runs an exhaustive search between all pairs of
+observations between each dataset, it has to perform an increasing amount of
+work for each additional row it seeks to merge, and hence does not scale to
+large datasets.</p>
+<p>Below, I compare the performance of <code>fuzzyjoin</code> to <code>zoomerjoin</code> when matching
+datasets for the two distance metrics supported by <code>zoomerjoin</code>.</p>
+<p><img src="staticunnamed-chunk-5-1.png" width="672" /></p>
+<p>Zoomerjoin achieves almost linear scaling in both runtime and memory, while
+<code>fuzzyjoin</code> scales quadratically. Even for datasets with 2500 rows,
+<code>zoomerjoin</code> finishes in under a second. By contrast, the Jaccard-distance
+joins implemented in <code>fuzzyjoin</code> take over three minutes to join. For the
+largest Euclidean datasets, <code>fuzzyjoin</code> almost exhausts the 8GB memory capacity
+of the laptop used for benchmarking, while <code>zoomerjoin</code>’s memory rises above
+above 8 MB — a thousand-fold decrease<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>Of course, <code>zoomerjoin</code> isn’t better for every task; it supports fewer distance
+metrics, as well as other types of joins such as regex joins, and joins for
+genomic data. Additionally, fuzzyjoin does not use Rust, so it is easier to
+deploy on most systems, and will be available on more systems.</p>
+</div>
+<div id="use-zoomerjoin-for-blocking" class="section level1">
+<h1>Use Zoomerjoin For Blocking:</h1>
+<p>In many cases, a single distance metric will not be sufficient to distinguish
+matches from non-matches. As an example, it might be that multiple fields are
+needed to conclusively identify matches, or you might need to combine multiple
+string-distance metrics to properly distinguish different spellings of the same
+identifier from similar yet distinct identifiers.</p>
+<p>Zoomerjoin can’t do this itself, but it can drastically cut down on the time
+needed to perform such matching by acting as a pre-processing step. To do this,
+you can have Zoomerjoin return all pairs that are remotely similar, and then
+distinguish between matches and non-matches using a bespoke model. I can’t
+scoop some of the work I’m doing currently, but I can share that I have used
+Zoomerjoin as a pre-processing step to a machine-learning model to find
+credible matches in datasets with hundreds of millions of rows in a matter of
+minutes.</p>
+</div>
+<div id="bibliography" class="section level1 unnumbered">
+<h1>Bibliography</h1>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Broder" class="csl-entry">
+Broder, A. Z. 1997. <span>“On the Resemblance and Containment of Documents.”</span> In <em>Proceedings. Compression and Complexity of <span>SEQUENCES</span> 1997 (Cat. No.97TB100171)</em>. <span>IEEE</span> Comput. Soc. <a href="https://doi.org/10.1109/sequen.1997.666900">https://doi.org/10.1109/sequen.1997.666900</a>.
+</div>
+<div id="ref-Datar_2004" class="csl-entry">
+Datar, Mayur, Nicole Immorlica, Piotr Indyk, and Vahab S. Mirrokni. 2004. <span>“Locality-Sensitive Hashing Scheme Based on p-Stable Distributions.”</span> In <em>Proceedings of the Twentieth Annual Symposium on Computational Geometry</em>. <span>ACM</span>. <a href="https://doi.org/10.1145/997817.997857">https://doi.org/10.1145/997817.997857</a>.
+</div>
+<div id="ref-fuzzyjoin" class="csl-entry">
+Robinson, David. 2020. <em>Fuzzyjoin: Join Tables Together on Inexact Matching</em>. <a href="https://CRAN.R-project.org/package=fuzzyjoin">https://CRAN.R-project.org/package=fuzzyjoin</a>.
+</div>
+</div>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>I am not entirely sure that all of
+zoomerjoin’s memory usage is being captured in this benchmark, due to
+difficulties of measuring the memory used by both R and Rust parts of the
+implimentation. The qualitative conclusions aren’t senstive to this however:
+zoomerjoin can join datasets with millions or hundreds of millions of rows
+while using a realistic amount of memory.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+    <h1> Comments </h1>
+    </div>
+
+
+    <script src="https://utteranc.es/client.js"
+            repo="beniaminogreen/beniaminogreen.github.io"
+            issue-term="url"
+            label="comment_thread"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+
+
+    
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2023-07-26-i-don-t-believe-mo-salah-reduced-hate-crimes/">
+            <span class="next-text nav-default">I Don&#39;t Believe Mo Salah Reduced Hate Crimes</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:beniamino.green@tutanota.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/ben-green-b33240185/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/beniaminogreen" class="iconfont icon-github" title="github"></a>
+  <a href="https://beniamino.org/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Beniamino Green</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
