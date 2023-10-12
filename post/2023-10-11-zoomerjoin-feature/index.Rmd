@@ -1,0 +1,38 @@
+---
+title: Zoomerjoin Featured on R-Weekly Podcast!
+author: ''
+date: '2023-10-11'
+slug: []
+categories: []
+tags: []
+lastmod: '2023-10-11T23:23:11-04:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+Listen to the podcast [here](https://rweekly.fireside.fm/139). Thanks for the
+shout out, guys!
+
+<!--more-->
+
+My new R package zoomerjoin was featured on last week's episode of the
+[R-weekly podcast and news letter](https://rweekly.org/). Gratifying to see it
+gaining popularity, and happy that more people are learning about the tool!
+
