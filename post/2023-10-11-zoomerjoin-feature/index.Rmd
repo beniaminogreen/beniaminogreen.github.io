@@ -28,7 +28,7 @@ sequenceDiagrams:
 ---
 
 Listen to the podcast [here](https://rweekly.fireside.fm/139). Thanks for the
-shout out, guys!
+shout-out, guys!
 
 <!--more-->
 
