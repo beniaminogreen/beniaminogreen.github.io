@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Beniamino Green</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://beniamino.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://beniamino.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connecting to the Yale VPN on Linux</title>
+      <link>https://beniamino.org/post/2023-11-05-using-yale-vpn-on-linux/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://beniamino.org/post/2023-11-05-using-yale-vpn-on-linux/</guid>
+      <description>&lt;p&gt;A few hours ago, Yale changed the process of authenticating authenticating to
+their VPN. If you were using the openconnect CLI, this might make it impossible
+for you to sign in using the VPN. In this post, I show how to use the python
+openconnect-sso package, which is a wrapper around openconnect, and will allow
+you to use the new web-based SSO.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Zoomerjoin Featured on R-Weekly Podcast!</title>
       <link>https://beniamino.org/post/2023-10-11-zoomerjoin-feature/</link>
