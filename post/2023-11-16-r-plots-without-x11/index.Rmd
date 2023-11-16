@@ -1,5 +1,5 @@
 ---
-title: Creating R Plots without X11
+title: Creating R Plots Without X11
 author: ''
 date: '2023-11-16'
 slug: []
