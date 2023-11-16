@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Beniamino Green</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://beniamino.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://beniamino.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating R Plots without X11</title>
+      <link>https://beniamino.org/post/2023-11-16-r-plots-without-x11/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://beniamino.org/post/2023-11-16-r-plots-without-x11/</guid>
+      <description>
+
+
+&lt;p&gt;Cypress pros don’t want you to know about this one weird trick!&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Connecting to the Yale VPN on Linux</title>
       <link>https://beniamino.org/post/2023-11-05-using-yale-vpn-on-linux/</link>

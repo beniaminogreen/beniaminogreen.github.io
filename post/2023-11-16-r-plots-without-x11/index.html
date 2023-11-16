@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Zoomerjoin Featured on R-Weekly Podcast! - Beniamino Green</title>
+  <title>Creating R Plots without X11 - Beniamino Green</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Beniamino Green" /><meta name="description" content=" Listen to the podcast here. Thanks for the shout out, guys!
+<meta name="author" content="Beniamino Green" /><meta name="description" content=" Cypress pros don’t want you to know about this one weird trick!
 " />
 
 
@@ -27,7 +27,7 @@
 <meta name="generator" content="Hugo 0.96.0 with theme even" />
 
 
-<link rel="canonical" href="https://beniamino.org/post/2023-10-11-zoomerjoin-feature/" />
+<link rel="canonical" href="https://beniamino.org/post/2023-11-16-r-plots-without-x11/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,34 +40,31 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Zoomerjoin Featured on R-Weekly Podcast!" />
+<meta property="og:title" content="Creating R Plots without X11" />
 <meta property="og:description" content="
 
 
-Listen to the podcast here. Thanks for the
-shout out, guys!
+Cypress pros don’t want you to know about this one weird trick!
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://beniamino.org/post/2023-10-11-zoomerjoin-feature/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-10-11T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-10-11T23:23:11-04:00" />
+<meta property="og:url" content="https://beniamino.org/post/2023-11-16-r-plots-without-x11/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-11-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-16T17:08:48-05:00" />
 
-<meta itemprop="name" content="Zoomerjoin Featured on R-Weekly Podcast!">
+<meta itemprop="name" content="Creating R Plots without X11">
 <meta itemprop="description" content="
 
 
-Listen to the podcast here. Thanks for the
-shout out, guys!
-"><meta itemprop="datePublished" content="2023-10-11T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2023-10-11T23:23:11-04:00" />
-<meta itemprop="wordCount" content="34">
+Cypress pros don’t want you to know about this one weird trick!
+"><meta itemprop="datePublished" content="2023-11-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-11-16T17:08:48-05:00" />
+<meta itemprop="wordCount" content="380">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Zoomerjoin Featured on R-Weekly Podcast!"/>
+<meta name="twitter:title" content="Creating R Plots without X11"/>
 <meta name="twitter:description" content="
 
 
-Listen to the podcast here. Thanks for the
-shout out, guys!
+Cypress pros don’t want you to know about this one weird trick!
 "/>
 
 <!--[if lte IE 9]>
@@ -145,22 +142,71 @@ shout out, guys!
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Zoomerjoin Featured on R-Weekly Podcast!</h1>
+      <h1 class="post-title">Creating R Plots without X11</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2023-10-11 </span>
+        <span class="post-time"> 2023-11-16 </span>
         
-          <span class="more-meta"> 34 words </span>
-          <span class="more-meta"> 1 min read </span>
+          <span class="more-meta"> 380 words </span>
+          <span class="more-meta"> 2 mins read </span>
         
       </div>
     </header>
 
     
     <div class="post-content">
-      <p>My new R package zoomerjoin was featured on last week’s episode of the
-<a href="https://rweekly.org/">R-weekly podcast and news letter</a>. Gratifying to see it
-gaining popularity, and happy that more people are learning about the tool!</p>
+      <p>Every now and then, I’ll have to work on a server where R has been compiled
+without support for graphics. I thought this meant that I couldn’t make plots,
+but that’s not the case! In this post, I’ll share a way to render plots
+in an R installation that’s been compiled without graphics support
+using the <code>Cario</code> library.</p>
+<p>Normally, the easiest way around an R install without graphics support is to
+run your compute on the server you’re using, then download the results to your
+local computer and make the figures there. If you’re like me and work with
+restricted data, this likely isn’t an option for you and you might have to get
+inventive.</p>
+<div id="how-do-you-know-if-you-have-this-issue" class="section level2">
+<h2>How do you know if you have this issue?</h2>
+<p>The easiest way to diagnose if you have this issue is to use the
+<code>capabilities()</code> command in R, which reports on the features R was compiled
+With. If you have <code>FALSE</code> under X11, jpeg, png, cairo, and tiff you are likely going
+to have an issue. In my case, I have <code>TRUE</code> under jpeg, png, and tiff, cairo, but
+they aren’t working because I don’t have X11 in my environment.</p>
+<pre><code>capabilities()
+jpeg         png        tiff       tcltk         X11        aqua
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE
+   http/ftp     sockets      libxml        fifo      cledit       iconv
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+        NLS       Rprof     profmem       cairo         ICU long.double
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+    libcurl
+       TRUE</code></pre>
+</div>
+<div id="how-to-resolve-the-issue" class="section level2">
+<h2>How To Resolve The Issue</h2>
+<p>I thought that this wasn’t an issue that a regular user could fix, as it seems
+like you would have to re-compile R to enable graphics support. As it turns
+out, you can install the <code>Caro</code> package in R which provides another set of
+graphics drivers and does not depend on X11, allowing you to render your graphs
+even on a server without X11. Usage is very simple, but you have to manually
+open and close each file you want to save graphics to, and I can’t get the
+<code>ggsave</code> command to work with it.</p>
+<p>Here’s how you can use <code>Cario</code> to render and save basic ggplot:</p>
+<pre class="r"><code>#install.packages(c(&quot;Cario&quot;,&quot;ggplot2&quot;))
+library(Cairo)
+library(ggplot2)
+
+Cairo(600, 600, file=&quot;basic_plot.png&quot;, type=&quot;png&quot;, bg=&quot;white&quot;) # open graphics device
+ggplot(cars, aes(x=speed, y=dist)) + # plot a simple chart with ggplot
+        geom_point() +
+        ggtitle(&quot;Example Plot&quot;)
+dev.off()</code></pre>
+</div>
+<div id="output" class="section level2">
+<h2>Output:</h2>
+<p>A perfectly-rendered graph made without X11:</p>
+<p><img src="staticunnamed-chunk-3-1.png" width="672" /></p>
+</div>
 
     <h1> Comments </h1>
     </div>
@@ -180,13 +226,9 @@ gaining popularity, and happy that more people are learning about the tool!</p>
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/2023-11-05-using-yale-vpn-on-linux/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Connecting to the Yale VPN on Linux</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/2023-10-05-introducing-zoomerjoin/">
-            <span class="next-text nav-default">Introducing Zoomerjoin</span>
+        
+        <a class="next" href="/post/2023-11-05-using-yale-vpn-on-linux/">
+            <span class="next-text nav-default">Connecting to the Yale VPN on Linux</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
