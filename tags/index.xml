@@ -5,6 +5,7 @@
     <link>https://beniamino.org/tags/</link>
     <description>Recent content in Tags on Beniamino Green</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://beniamino.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <atom:link href="https://beniamino.org/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
