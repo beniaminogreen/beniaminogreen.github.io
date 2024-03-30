@@ -6,22 +6,20 @@
     <description>Recent content on Beniamino Green</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://beniamino.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://beniamino.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://beniamino.org/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
-      
       <guid>https://beniamino.org/about/</guid>
       <description>About Me I am an incoming pre-doctoral fellow at the Yale Tobin Center for Economic Policy. I work on causal inference and machine learning.
 Previously, I received a Master&amp;rsquo;s in Social Analysis and Research from Brown University, and a Bachelor&amp;rsquo;s in Politics, Philosophy and Economics with a concentration in Quantitative Methods from the University College London.</description>
     </item>
-    
     <item>
       <title>Creating R Plots without X11</title>
       <link>https://beniamino.org/post/2023-11-16-r-plots-without-x11/</link>
       <pubDate>Thu, 16 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://beniamino.org/post/2023-11-16-r-plots-without-x11/</guid>
       <description>
 
@@ -29,12 +27,10 @@ Previously, I received a Master&amp;rsquo;s in Social Analysis and Research from
 &lt;p&gt;Cypress pros don’t want you to know about this one weird trick!&lt;/p&gt;
 </description>
     </item>
-    
     <item>
       <title>Connecting to the Yale VPN on Linux</title>
       <link>https://beniamino.org/post/2023-11-05-using-yale-vpn-on-linux/</link>
       <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://beniamino.org/post/2023-11-05-using-yale-vpn-on-linux/</guid>
       <description>&lt;p&gt;A few hours ago, Yale changed the process of authenticating authenticating to
 their VPN. If you were using the openconnect CLI, this might make it impossible
@@ -42,12 +38,10 @@ for you to sign in using the VPN. In this post, I show how to use the python
 openconnect-sso package, which is a wrapper around openconnect, and will allow
 you to use the new web-based SSO.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Zoomerjoin Featured on R-Weekly Podcast!</title>
       <link>https://beniamino.org/post/2023-10-11-zoomerjoin-feature/</link>
       <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://beniamino.org/post/2023-10-11-zoomerjoin-feature/</guid>
       <description>
 
@@ -56,12 +50,10 @@ you to use the new web-based SSO.&lt;/p&gt;</description>
 shout out, guys!&lt;/p&gt;
 </description>
     </item>
-    
     <item>
       <title>Introducing Zoomerjoin</title>
       <link>https://beniamino.org/post/2023-10-05-introducing-zoomerjoin/</link>
       <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://beniamino.org/post/2023-10-05-introducing-zoomerjoin/</guid>
       <description>
 
@@ -72,12 +64,10 @@ the Journal of Open Source Software
 &lt;a href=&#34;https://joss.theoj.org/papers/10.21105/joss.05693&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
-    
     <item>
       <title>I Don&#39;t Believe Mo Salah Reduced Hate Crimes</title>
       <link>https://beniamino.org/post/2023-07-26-i-don-t-believe-mo-salah-reduced-hate-crimes/</link>
       <pubDate>Wed, 26 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://beniamino.org/post/2023-07-26-i-don-t-believe-mo-salah-reduced-hate-crimes/</guid>
       <description>
 
@@ -87,42 +77,33 @@ of hate crimes in the area and decreased Islamophobia among Liverpool F.C.
 Twitter followers.&lt;/p&gt;
 </description>
     </item>
-    
     <item>
       <title>New Entries in The Ben Green Style Guide</title>
       <link>https://beniamino.org/post/2023-07-24-new-entries-in-the-ben-green-style-guide/</link>
       <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://beniamino.org/post/2023-07-24-new-entries-in-the-ben-green-style-guide/</guid>
       <description>&lt;p&gt;I don&amp;rsquo;t say &amp;ldquo;control for&amp;rdquo; or &amp;ldquo;approaching significance&amp;rdquo;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Make Research Reproducible with &#39;GNU Make&#39;</title>
       <link>https://beniamino.org/post/2022-06-20-make-research-easy-with-make/</link>
       <pubDate>Wed, 22 Jun 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://beniamino.org/post/2022-06-20-make-research-easy-with-make/</guid>
       <description>GNU Make is a computer program long known to computer scientists, but tragically underused in the social sciences. Originally developed to manage the compilation of C/C++ code, Make can be used to automate running stages of your data analysis code whenever changes are made to the code that generates them. Using make will save time (code is run if and only if its dependencies are updated), eliminate a common class of errors (code is never run using old data or calculations), and free up your head space to write code rather than managing dependencies.</description>
     </item>
-    
     <item>
       <title>Research</title>
       <link>https://beniamino.org/research/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://beniamino.org/research/</guid>
-      <description>Published Articles: Zoomerjoin: Superlatively Fast Fuzzy Joins:  Researchers often have to link large datasets without access to a unique identifying key, or on the basis of a field that contains misspellings, small errors, or is otherwise inconsistent. Most popular methods to solve this problem involve comparing all possible pairs of matches between each dataset, incurring a computational cost proportional to the product of the rows in each dataset O(mn).</description>
+      <description>Published Articles: Zoomerjoin: Superlatively Fast Fuzzy Joins: Researchers often have to link large datasets without access to a unique identifying key, or on the basis of a field that contains misspellings, small errors, or is otherwise inconsistent. Most popular methods to solve this problem involve comparing all possible pairs of matches between each dataset, incurring a computational cost proportional to the product of the rows in each dataset O(mn). As such, these methods do not scale to large datasets.</description>
     </item>
-    
     <item>
       <title>Software</title>
       <link>https://beniamino.org/software/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://beniamino.org/software/</guid>
-      <description>Zoomerjoin    zoomerjoin is an R package that empowers you to fuzzy-join massive datasets rapidly, and with little memory consumption. It is powered by high-performance implementations of Locality Sensitive Hashing, an algorithm that finds the matches records between two datasets without having to compare all possible pairs of observations. In practice, this means zoomerjoin can fuzzily-join datasets days, or even years faster than other matching packages. zoomerjoin has been used in-production to join datasets of hundreds of millions of names in a few hours.</description>
+      <description>Zoomerjoin zoomerjoin is an R package that empowers you to fuzzy-join massive datasets rapidly, and with little memory consumption. It is powered by high-performance implementations of Locality Sensitive Hashing, an algorithm that finds the matches records between two datasets without having to compare all possible pairs of observations. In practice, this means zoomerjoin can fuzzily-join datasets days, or even years faster than other matching packages. zoomerjoin has been used in-production to join datasets of hundreds of millions of names in a few hours.</description>
     </item>
-    
   </channel>
 </rss>
