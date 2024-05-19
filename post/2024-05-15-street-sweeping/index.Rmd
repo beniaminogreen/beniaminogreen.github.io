@@ -27,6 +27,7 @@ sequenceDiagrams:
   options: ''
 ---
 
+
 I filed a FOIA request to obtain every street-sweeping ticket issued in New
 Haven since 2021.
 
@@ -160,7 +161,7 @@ data %>%
     xlab("Number of tickets given") +
     ylab("Share of tickets unpaid") +
     scale_y_continuous(labels = scales::percent) +
-    ggtitle("Mean Amount Paid / Due by Neighborhood")
+    ggtitle("Number of Tickets Given out / Share Paid by Neighborhood")
 
 ```
 
@@ -206,7 +207,8 @@ data %>%
     xlab("Number of tickets given") +
     ylab("Share of tickets unpaid") +
     scale_y_continuous(labels = scales::percent) +
-    theme_bw()
+    theme_bw() +
+    ggtitle("Number of Tickets Given out / Share Paid by Car Make")
 ```
 
 Both associations are very interesting. I'd love to try and find a way to
