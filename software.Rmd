@@ -8,7 +8,7 @@ author: "Beniamino Green"
 
 zoomerjoin is an R package that empowers you to fuzzy-join massive datasets rapidly, and with little memory consumption. It is powered by high-performance implementations of Locality Sensitive Hashing, an algorithm that finds the matches records between two datasets without having to compare all possible pairs of observations. In practice, this means zoomerjoin can fuzzily-join datasets days, or even years faster than other matching packages. zoomerjoin has been used in-production to join datasets of hundreds of millions of names in a few hours.
 
-# [Sparsepolicytree](https://yale-medicaid.github.io/sparsepolicytree/)
+# [Sparsepolicytree](https://beniaminogreen.github.io/sparsepolicytree/)
 
 An R / Rust Package to implement an exhaustive tree search for policy-learning. Aims to extend and speed up work done with the policytree package.
 
