@@ -9,6 +9,3 @@ author: "Beniamino Green"
 
 Researchers often have to link large datasets without access to a unique identifying key, or on the basis of a field that contains misspellings, small errors, or is otherwise inconsistent. Most popular methods to solve this problem involve comparing all possible pairs of matches between each dataset, incurring a computational cost proportional to the product of the rows in each dataset O(mn). As such, these methods do not scale to large datasets. Zoomerjoin is an R package that empowers users to fuzzily-join massive datasets with millions of rows in seconds or minutes. Backed by two performant, mutlithreaded Locality-Sensitive Hash algorithms, `zoomerjoin` saves time by not comparing distant pairs of observations and typically runs in linear O(m+n) time.
 
-# Works In Progress:
-
-## Why Can’t We Be Friends? Untangling Conjoined Polarization in America (Second Author w/ Julie Norman)
