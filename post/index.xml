@@ -36,11 +36,15 @@ Haven since 2021.&lt;/p&gt;
       <link>https://beniamino.org/post/2023-11-05-using-yale-vpn-on-linux/</link>
       <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
       <guid>https://beniamino.org/post/2023-11-05-using-yale-vpn-on-linux/</guid>
-      <description>&lt;p&gt;A few hours ago, Yale changed the process of authenticating authenticating to
+      <description>
+
+
+&lt;p&gt;A few hours ago, Yale changed the process of authenticating authenticating to
 their VPN. If you were using the openconnect CLI, this might make it impossible
 for you to sign in using the VPN. In this post, I show how to use the python
 openconnect-sso package, which is a wrapper around openconnect, and will allow
-you to use the new web-based SSO.&lt;/p&gt;</description>
+you to use the new web-based SSO.&lt;/p&gt;
+</description>
     </item>
     <item>
       <title>Zoomerjoin Featured on R-Weekly Podcast!</title>

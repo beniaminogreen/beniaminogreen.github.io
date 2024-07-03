@@ -1,0 +1,70 @@
+---
+title: Connecting to the Yale VPN on Linux
+author: 'Beniamino Green'
+date: '2023-11-05'
+slug: []
+categories: []
+tags: []
+lastmod: '2023-11-05T13:14:41-05:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+A few hours ago, Yale changed the process of authenticating authenticating to
+their VPN. If you were using the openconnect CLI, this might make it impossible
+for you to sign in using the VPN. In this post, I show how to use the python
+openconnect-sso package, which is a wrapper around openconnect, and will allow
+you to use the new web-based SSO.
+
+<!--more-->
+
+Here's a quick (albiet slightly clunky)  way to use the [openconnect-sso](https://github.com/vlaci/openconnect-sso) package to connect to the VPN. I'd be interested to hear if there's a more secure, vetted, or easier process to do this. If you know about one, please write to me, and I'll share it here. Additionally, I am sure that Yale will or may already have distributed instructions for the best way of connecting to the VPN on Linux, I'll make sure to link to them when I find them. In the meantime, this fix should allow you to quickly connect to library resoruces or compute clusters.
+
+## Step 1: Install openconnect-sso
+
+First, you have to install the package. If you're on Arch Linux as I am, you
+can install using yay or another AUR helper.
+
+```
+yay -S openconnect-sso
+```
+
+If you aren't on arch linux, you can also install this using the package and it's dependencies very easily using a virtual environment:
+
+```
+python -m venv vpnvenv
+source vpnvenv/bin/activate
+pip install openconnect-sso
+pip install PyQtWebEngine
+pip install pyqt5
+```
+
+Please beware that you will have to source the virtual environment by typing `souce /pathtovenv/bin/activate` in the future when you want to use the openconnect command.
+
+## Step 2: Run The Command
+
+This part's easy! Use the --server flag to pass the VPN endpoint, `access.yale.edu`
+
+```
+openconnect-sso --server access.yale.edu
+```
+
+
+
