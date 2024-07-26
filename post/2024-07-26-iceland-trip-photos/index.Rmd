@@ -1,0 +1,70 @@
+---
+title: Iceland Photos
+author: ''
+date: '2024-07-26'
+slug: []
+categories: []
+tags: []
+lastmod: '2024-07-26T16:24:44-04:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+Photos from my recent trip to Iceland.
+
+<!--more-->
+
+I thought it would be fun to try and do some analog photography on my recent trip to Iceland. On a whim, I picked up an [Argus C3](https://en.wikipedia.org/wiki/Argus_C3) for around $30 on Ebay, and gave it ago. There were some challenges getting the camera working but I am very happy with the results for my first ever time shooting film, and would absolutely reccomend the camera to anyone curious about analog photography.
+
+![](photos/0.jpg)
+
+![](photos/1.jpg)
+
+![](photos/2.jpg)
+
+![](photos/3.jpg)
+
+![](photos/4.jpg)
+
+![](photos/5.jpg)
+
+![](photos/6.jpg)
+
+![](photos/7.jpg)
+
+![](photos/8.jpg)
+
+![](photos/9.jpg)
+
+![](photos/10.jpg)
+
+![](photos/11.jpg)
+
+![](photos/12.jpg)
+
+![](photos/13.jpg)
+
+![](photos/14.jpg)
+
+![](photos/15.jpg)
+
+![](photos/16.jpg)
+
+

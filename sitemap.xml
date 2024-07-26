@@ -10,20 +10,27 @@
   
   <url>
     <loc>https://beniamino.org/</loc>
-    <lastmod>2024-05-15T22:47:19-04:00</lastmod>
+    <lastmod>2024-07-26T16:24:44-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://beniamino.org/post/2024-05-15-street-sweeping/</loc>
-    <lastmod>2024-05-15T22:47:19-04:00</lastmod>
+    <loc>https://beniamino.org/post/2024-07-26-iceland-trip-photos/</loc>
+    <lastmod>2024-07-26T16:24:44-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://beniamino.org/post/</loc>
+    <lastmod>2024-07-26T16:24:44-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://beniamino.org/post/2024-05-15-street-sweeping/</loc>
     <lastmod>2024-05-15T22:47:19-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
