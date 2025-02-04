@@ -16,7 +16,7 @@ hiddenFromHomePage: no
 contentCopyright: no
 reward: no
 mathjax: yes
-mathjaxEnableSingleDollar: yes
+mathjaxEnableSingleDollar: no
 mathjaxEnableAutoNumber: yes
 hideHeaderAndFooter: no
 flowchartDiagrams:
@@ -31,6 +31,10 @@ Jane Street is a quantitative trading firm that puts out monthly puzzles. Last
 month, I took a stab at their monthly puzzle, and share my solution in this post.
 
 <!--more-->
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 
 Jane Street is a quantitative trading firm that puts out monthly puzzles that
 normally focus on probability, programming or statistics. Last month, I tried
@@ -116,9 +120,9 @@ speed up the search:
 You could likely use the prime trick I suggested above to speed up the search,
 but I used the fact that if we have two sets of numbers and one is a subset of
 the other, the GCD of the superset set must be smaller than the GCD of the
-subset set. Put formally:
+subset. Put formally:
 
-$$\mathbb{A} \subset \mathbb{B} \Rightarrow gcd(A) > gcd(B)$$
+$$\mathbb{A} \subset \mathbb{B} \Rightarrow gcd(\mathbb{A}) > gcd(\mathbb{B})$$
 
 Thus, if we see a board that has any filled in rows, the GCD of these rows acts
 as an upper bound on the GCD of the board after it has been filled in. Whenever

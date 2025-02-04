@@ -60,7 +60,7 @@ Jane Street is a quantitative trading firm that puts out monthly puzzles. Last
 month, I took a stab at their monthly puzzle, and share my solution in this post.
 "><meta itemprop="datePublished" content="2025-02-03T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2025-02-03T19:19:43-05:00" />
-<meta itemprop="wordCount" content="1018">
+<meta itemprop="wordCount" content="1017">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="January 2025 Jane Street Puzzle"/>
 <meta name="twitter:description" content="
@@ -150,7 +150,7 @@ month, I took a stab at their monthly puzzle, and share my solution in this post
       <div class="post-meta">
         <span class="post-time"> 2025-02-03 </span>
         
-          <span class="more-meta"> 1018 words </span>
+          <span class="more-meta"> 1017 words </span>
           <span class="more-meta"> 5 mins read </span>
         
       </div>
@@ -158,7 +158,10 @@ month, I took a stab at their monthly puzzle, and share my solution in this post
 
     
     <div class="post-content">
-      <p>Jane Street is a quantitative trading firm that puts out monthly puzzles that
+      <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<p>Jane Street is a quantitative trading firm that puts out monthly puzzles that
 normally focus on probability, programming or statistics. Last month, I tried
 solving one of their puzzles for the first time, and really enjoyed the
 process. Here’s how I attacked the <a href="https://www.janestreet.com/puzzles/somewhat-square-sudoku-index/">somewhat square Sudoku
@@ -237,8 +240,8 @@ speed up the search:</p>
 <p>You could likely use the prime trick I suggested above to speed up the search,
 but I used the fact that if we have two sets of numbers and one is a subset of
 the other, the GCD of the superset set must be smaller than the GCD of the
-subset set. Put formally:</p>
-<p><span class="math display">\[\mathbb{A} \subset \mathbb{B} \Rightarrow gcd(A) &gt; gcd(B)\]</span></p>
+subset. Put formally:</p>
+<p><span class="math display">\[\mathbb{A} \subset \mathbb{B} \Rightarrow gcd(\mathbb{A}) &gt; gcd(\mathbb{B})\]</span></p>
 <p>Thus, if we see a board that has any filled in rows, the GCD of these rows acts
 as an upper bound on the GCD of the board after it has been filled in. Whenever
 we fill in a new row in a potential solution, we can check if the board can
@@ -344,7 +347,6 @@ other, more efficient bounds - please reach out to me if you did!</p>
   <script type="text/javascript">
     window.MathJax = {
       tex: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
         tags: 'ams',
         }
     };
