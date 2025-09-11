@@ -10,20 +10,27 @@
   
   <url>
     <loc>https://beniamino.org/</loc>
-    <lastmod>2025-02-03T19:19:43-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://beniamino.org/post/2025-02-03-jane-street-puzzle/</loc>
-    <lastmod>2025-02-03T19:19:43-05:00</lastmod>
+    <lastmod>2025-09-09T23:47:07-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://beniamino.org/post/</loc>
+    <lastmod>2025-09-09T23:47:07-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://beniamino.org/post/2025-09-09-why-i-am-short-qubt/</loc>
+    <lastmod>2025-09-09T23:47:07-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://beniamino.org/post/2025-02-03-jane-street-puzzle/</loc>
     <lastmod>2025-02-03T19:19:43-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
